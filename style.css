@@ -1,0 +1,128 @@
+h1, h2, h3 {
+  margin: 0;
+}
+.container {
+    width: 100%;
+    height: 100dvh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+.box-1{
+    grid-column: span 1;
+    position: relative;
+    height: 100dvh;
+}
+.box-1 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    filter: grayscale(50%) brightness(120%) contrast(120%);
+}
+.box-2{
+    grid-column: span 2;
+    overflow-y: scroll;
+    height: 100dvh;
+    background-color: #eceaec;
+}
+.content-container{
+  padding: 2rem 4rem;
+}
+.content-container p{
+  text-align: justify;
+  font-size: 1.2em;
+}
+.card-container{
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+.card-items{
+  grid-column: span 1;
+  height: 22rem;
+  background-color: black;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-items div{
+  position: absolute;
+  inset: 0;
+  background-color: rgba(236, 234, 236, 0.9);
+  height: 25%;
+  width: 100%;
+  margin-top: auto;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+.card-items div p {
+  color: #484d50;
+  overflow: hidden;
+  text-align: start;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+           line-clamp: 2; 
+   -webkit-box-orient: vertical;
+  
+}
+.card-items img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      filter: grayscale(50%) brightness(120%) contrast(120%);
+}
+  @media (max-width: 1000px) {
+    .container {
+      grid-template-columns: 1fr; /* Jadi 2 kolom */
+    }
+    .box-1{
+      height: 50dvh;
+    }
+    .box-2{
+      grid-column: span 1;
+      overflow-y: visible;
+      height: fit-content;
+  }
+    .card-container{
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+  }
+  .card-items div{
+    padding: 0.75rem;
+  }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      grid-template-columns: 1fr; /* Jadi 1 kolom */
+    }
+    .content-container{
+      padding: 1rem 2rem;
+    }
+    .box-1{
+      height: 50dvh;
+    }
+    .box-2{
+        overflow-y: visible;
+        grid-column: span 1;
+        height: fit-content;
+    }
+    .card-items div{
+      padding: 0.50rem;
+    }
+    .card-container{
+      width: 100%;
+      display: grid;
+      grid-template-columns:  1fr;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+  }
+  }
+  
